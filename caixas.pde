@@ -1,5 +1,7 @@
-class Caixa {
-  void desenhaCaixas(){
-    box(100);
-  }
-}
+class Caixa extends baseClass {
+
+	void draw() {
+		box(100);
+	}
+
+} 

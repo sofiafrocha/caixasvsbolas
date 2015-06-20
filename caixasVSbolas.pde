@@ -16,29 +16,30 @@ int boardHeight = 300;
 int boardDepth = 10;
 
 // The Players
-Caixa player1 = new Caixa();
-Bola player2 = new Bola();
+//Caixa player1 = new Caixa();
+Bola player2 = new Bola(50,50,60, 10, 10, 10, 0, 0, "bolas");
 
 // The Ammo Clips
-Caixa[] caixas = new Caixa[ammountAmmo];
-Bola[] bolas = new Bola[ammountAmmo];
+//Caixa[] caixas = new Caixa[ammountAmmo];
+//Bola[] bolas = new Bola[ammountAmmo];
 
 
 void setup() {
 	size(1000, 700, P3D);
 
 	// The Ammo
-	for (int i = 0; i < caixas.length; ++i) {
+	//for (int i = 0; i < caixas.length; ++i) {
 		// é preciso?????
-	}
+	//}
 }
 
 void draw() {
 	camera(camPosX, camPosY, camPosZ, 0, 0, 0, 0, 0, -1);
+	
 	translate(0, 0, 0); 
 	box(boardWidth, boardHeight, boardDepth);
 
-	// Draw the Ammo
+	/*// Draw the Ammo
 	for (int i = 0; i < caixas.length; ++i) {
 		caixas[i].draw();
 	}
@@ -61,6 +62,10 @@ void draw() {
 	}
 
 	// // Players <-> Ammo
+
+	*/
+	player2.draw();
+
 }
 
 // Controls
