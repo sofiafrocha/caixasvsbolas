@@ -15,62 +15,71 @@ class Caixa extends baseClass {
   
     void draw() {
       pushMatrix();
-        fill(0, 0, 255);
         translate(x, y, z);
         desenhaCaixa();
       popMatrix();
     } 
 
   void desenhaCaixa(){
+    PImage cubo;
+    cubo = loadImage("data/neve.jpg");
+    textureMode(IMAGE);
+    
     int Cx = 0;
     int Cy = 0;
     
     //Face 1 lado cima
     beginShape(QUADS);
-      vertex( 0+Cx, 0+Cy, 100, 0, 0);
-      vertex( 0+Cx, 100+Cy, 100, 0, 100);
-      vertex( 100+Cx, 100+Cy, 100, 100, 100);
-      vertex( 100+Cx, 0+Cy, 100, 100, 0);
+    texture(cubo);
+      vertex( 0+Cx, 0+Cy, 10, 0, 0);
+      vertex( 0+Cx, 10+Cy, 10, 0, 100);
+      vertex( 10+Cx, 10+Cy, 10, 100, 100);
+      vertex( 10+Cx, 0+Cy, 10, 100, 0);
     endShape();
     
     //Face 2 lado atrás
     beginShape(QUADS);
-      vertex( 0+Cx, 0+Cy, 100, 0, 0);
-      vertex( 0+Cx, 100+Cy, 100, 0, 100);
-      vertex( 0+Cx, 100+Cy, 0, 100, 100);
+    texture(cubo);
+      vertex( 0+Cx, 0+Cy, 10, 0, 0);
+      vertex( 0+Cx, 10+Cy, 10, 0, 100);
+      vertex( 0+Cx, 10+Cy, 0, 100, 100);
       vertex( 0+Cx, 0+Cy, 0, 100, 0);
     endShape();
     
     //Face 3 frente
     beginShape(QUADS);
-      vertex( 0+Cx, 100+Cy, 0, 0, 0);
-      vertex( 0+Cx, 100+Cy, 100, 0, 100);
-      vertex( 100+Cx, 100+Cy, 100, 100, 100);
-      vertex( 100+Cx, 100+Cy, 0, 100, 0);
+    texture(cubo);
+      vertex( 0+Cx, 10+Cy, 0, 0, 0);
+      vertex( 0+Cx, 10+Cy, 10, 0, 100);
+      vertex( 10+Cx, 10+Cy, 10, 100, 100);
+      vertex( 10+Cx, 10+Cy, 0, 100, 0);
     endShape();
     
     //Face 4 lado baixo
     beginShape(QUADS);
-      vertex( 0+Cx, 100+Cy, 0, 0, 0);
+    texture(cubo);
+      vertex( 0+Cx, 10+Cy, 0, 0, 0);
       vertex( 0+Cx, 0+Cy, 0, 0, 100);
-      vertex( 100+Cx, 0+Cy, 0, 100, 100);
-      vertex( 100+Cx, 100+Cy, 0, 100, 0);
+      vertex( 10+Cx, 0+Cy, 0, 100, 100);
+      vertex( 10+Cx, 10+Cy, 0, 100, 0);
     endShape();
     
     //Face 5 atrás
     beginShape(QUADS);
-      vertex( 0+Cx, 0+Cy, 100, 0, 0);
+    texture(cubo);
+      vertex( 0+Cx, 0+Cy, 10, 0, 0);
       vertex( 0+Cx, 0+Cy, 0, 0, 100);
-      vertex( 100+Cx, 0+Cy, 0, 100, 100);
-      vertex( 100+Cx, 0+Cy, 100, 100, 0);
+      vertex( 10+Cx, 0+Cy, 0, 100, 100);
+      vertex( 10+Cx, 0+Cy, 10, 100, 0);
     endShape();
     
     //Face 6 lado frente
     beginShape(QUADS);
-      vertex( 100+Cx, 100+Cy, 0, 0, 0);
-      vertex( 100+Cx, 100+Cy, 100, 0, 100);
-      vertex( 100+Cx, 0+Cy, 100, 100, 100);
-      vertex( 100+Cx, 0+Cy, 0, 100, 0);
+    texture(cubo);
+      vertex( 10+Cx, 10+Cy, 0, 0, 0);
+      vertex( 10+Cx, 10+Cy, 10, 0, 100);
+      vertex( 10+Cx, 0+Cy, 10, 100, 100);
+      vertex( 10+Cx, 0+Cy, 0, 100, 0);
     endShape();
   }
 

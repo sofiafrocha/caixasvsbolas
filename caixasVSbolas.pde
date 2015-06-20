@@ -16,9 +16,8 @@ int boardHeight = 300;
 int boardDepth = 10;
 
 // The Players
-//Caixa player1 = new Caixa();
-Bola player1 = new Bola(0,-boardHeight/2 + 10,10, 4, 4, 4, 0, 0, "caixas");
-Bola player2 = new Bola(0,boardHeight/2 - 10,10, 4, 4, 4, 0, 0, "bolas");
+Caixa player1 = new Caixa(50, 50, 50, 10, 10, 10, 0, 0, "caixas");
+Bola player2 = new Bola(0,0,70, 10, 10, 10, 0, 0, "bolas");
 
 // The Ammo Clips
 //Caixa[] caixas = new Caixa[ammountAmmo];
@@ -92,8 +91,7 @@ void keyPressed() {
 	switch (key) {
 		case 'W':
 		case 'w':
-			
-                        camPosY = camPosY - 10;
+			camPosY = camPosY - 10;
 			break;
 
 		case 'S':
