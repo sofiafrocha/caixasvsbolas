@@ -1,3 +1,5 @@
-void desenhaCaixas(argumentos){
-  box(cenas);
+class Caixa {
+  void desenhaCaixas(){
+    box(100);
+  }
 }

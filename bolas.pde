@@ -1,3 +1,5 @@
-void desenhaBolas(argumentos){
-  sphere(cenas);
+class Bola {
+  void desenhaBolas(){
+    sphere(100);
+  }
 }
