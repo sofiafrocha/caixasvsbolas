@@ -26,37 +26,41 @@ class baseClass {
 	String team;
 
 
-	///// Functions
-	/*baseClass (int x_temp, int y_temp, int z_temp, int w_temp, int h_temp, int d_temp, int state_temp, int velocity_temp, String team_temp) {
-		
-		x = x_temp;
-		y = y_temp;
-		z = z_temp;
-		width = w_temp;
-		height = h_temp;
-		depth = d_temp;
-		state = state_temp;
-		velocity = velocity_temp;
-		team = team_temp;
-	}
-*/
-
- /*
-	setPosition(int x,int y,int z) {
-
+	// // Functions
+ 
+	void setPosition(int temp_x,int temp_y,int temp_z) {
+		x = temp_x;
+		y = temp_y;
+		z = temp_z;
 	}
 
-	setVelocity(iint v) {
-
+	void setVelocity(int v) {
+		velocity = v;
 	}
 
-	setColour(color c) {
-
+	void setColour(color temp_c) {
+		c = temp_c;
 	}
 
-	setState(int s) {
-
+	void setState(int s) {
+		state = s;
 	}
-*/
+
+	// // Moving
+	void moveRight() {
+		x = x + velocity;
+	}
+
+	void moveLeft() {
+		x = x - velocity;
+	}
+
+	void moveUp() {
+		y = y - velocity;
+	}
+
+	void moveDown() {
+		y = y + velocity;
+	}
 
 }

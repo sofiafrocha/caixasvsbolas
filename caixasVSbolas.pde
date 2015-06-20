@@ -13,11 +13,11 @@ int healthBolas = 100;
 // The Board
 int boardWidth = 150;
 int boardHeight = 300;
-int boardDepth = 10;
+int boardDepth = 8;
 
 // The Players
-Caixa player1 = new Caixa(50, 50, 50, 10, 10, 10, 0, 0, "caixas");
-Bola player2 = new Bola(0,0,70, 10, 10, 10, 0, 0, "bolas");
+Caixa player1 = new Caixa(0, boardHeight/2-20, 14, 10, 10, 10, 0, 0, "caixas");
+Bola player2 = new Bola(0, -boardHeight/2+20, 14, 10, 10, 10, 0, 10, "bolas");
 
 // The Ammo Clips
 //Caixa[] caixas = new Caixa[ammountAmmo];
@@ -66,7 +66,7 @@ void draw() {
 
 	*/
 	player2.draw();
-        player1.draw();
+    player1.draw();
 
 }
 
@@ -75,38 +75,68 @@ void keyPressed() {
 	
 	switch (keyCode) {
 		case DOWN:
-			// plantar uma barreira
+			player2.moveDown();
+			println("moveDown");
+			break;
 
 		case UP:
-			// atirar ammo
+			player2.moveUp();
+			println("moveUp");
+			break;
 
 		case RIGHT:
-			//move right
+			player2.moveRight();
+			println("moveRight");
+			break;
 
 		case LEFT:
-			//move left
+			player2.moveLeft();
+			println("moveLeft");
+			break;
 
 	}
 
 	switch (key) {
+		case 'U':
+		case 'u':
+			camPosY = camPosY - 10;
+			break;
+
+		case 'J':
+		case 'j':
+			camPosY = camPosY + 10;
+			break;
+
+		case 'H':
+		case 'h':
+			camPosX = camPosX - 10;
+			break;
+
+		case 'K':
+		case 'k':
+			camPosX = camPosX + 10;
+			break;
+
+		// // Controlos do jogador 1
+
 		case 'W':
 		case 'w':
-			camPosY = camPosY - 10;
+			player1.moveUp();
 			break;
 
 		case 'S':
 		case 's':
-			camPosY = camPosY + 10;
+			player1.moveDown();
 			break;
 
 		case 'A':
 		case 'a':
-			camPosX = camPosX - 10;
+			player1.moveLeft();
 			break;
 
 		case 'D':
 		case 'd':
-			camPosX = camPosX + 10;
+			player1.moveRight();
 			break;
 
 	}
