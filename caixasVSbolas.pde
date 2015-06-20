@@ -17,7 +17,7 @@ int boardDepth = 10;
 
 // The Players
 //Caixa player1 = new Caixa();
-Bola player2 = new Bola(50,50,60, 10, 10, 10, 0, 0, "bolas");
+Bola player2 = new Bola(0,0,70, 10, 10, 10, 0, 0, "bolas");
 
 // The Ammo Clips
 //Caixa[] caixas = new Caixa[ammountAmmo];
@@ -34,6 +34,7 @@ void setup() {
 }
 
 void draw() {
+        background(255, 255, 255);
 	camera(camPosX, camPosY, camPosZ, 0, 0, 0, 0, 0, -1);
 	
 	translate(0, 0, 0); 
@@ -83,5 +84,29 @@ void keyPressed() {
 
 		case LEFT:
 			//move left
+
+	}
+
+	switch (key) {
+		case 'W':
+		case 'w':
+			camPosY = camPosY - 10;
+			break;
+
+		case 'S':
+		case 's':
+			camPosY = camPosY + 10;
+			break;
+
+		case 'A':
+		case 'a':
+			camPosX = camPosX - 10;
+			break;
+
+		case 'D':
+		case 'd':
+			camPosX = camPosX + 10;
+			break;
+
 	}
 }
