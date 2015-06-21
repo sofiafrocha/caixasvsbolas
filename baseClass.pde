@@ -1,66 +1,82 @@
 class baseClass {
-	//Location
-	int x, y, z;
+  //Location
+  int x, y, z;
 
-	// Dimensions
-	int width;
-	int height;
-	int depth;
+  // Dimensions
+  int width;
+  int height;
+  int depth;
 
-	// Colour
-	color c = color(255, 0, 0);
+  // Colour
+  color c = color(255, 0, 0);
 
-	// Textura
-	// to-do
+  // Textura
+  // to-do
 
-	// State
-	// 0: waiting
-	// 1: placed, being used as barrier
-	// 2: on the move, being used as ammon
-	int state;
+  // State
+  // 0: waiting
+  // 1: next in use
+  // 2: placed, being used as barrier
+  // 3: on the move, being used as ammo
+  // 4: in Limbo - needs to be placed
+  int state;
 
-	// Velocity
-	int velocity;
+  // Velocity
+  int velocity;
+  int direction;
 
-	// Team
-	String team;
+  // Team
+  String team;
 
 
-	// // Functions
+  // // Functions
  
-	void setPosition(int temp_x,int temp_y,int temp_z) {
-		x = temp_x;
-		y = temp_y;
-		z = temp_z;
-	}
+  void setPosition(int temp_x,int temp_y,int temp_z) {
+    x = temp_x;
+    y = temp_y;
+    z = temp_z;
+  }
 
-	void setVelocity(int v) {
-		velocity = v;
-	}
+  void setVelocity(int v) {
+    velocity = v;
+  }
 
-	void setColour(color temp_c) {
-		c = temp_c;
-	}
+  void setColour(color temp_c) {
+    c = temp_c;
+  }
 
-	void setState(int s) {
-		state = s;
-	}
+  void setState(int s) {
+    state = s;
+  }
 
-	// // Moving
-	void moveRight() {
-		x = x + velocity;
-	}
+  // // Moving
+  void moveRight() {
+    x = x + velocity;
+  }
 
-	void moveLeft() {
-		x = x - velocity;
-	}
+  void moveLeft() {
+    x = x - velocity;
+  }
 
-	void moveUp() {
-		y = y - velocity;
-	}
+  void moveUp() {
+    y = y - velocity;
+  }
 
-	void moveDown() {
-		y = y + velocity;
-	}
+  void moveDown() {
+    y = y + velocity;
+  }
+  
+  // // Fire
+  void fire(int boardWidth, int boardHeight) {
+      // se estiver ainda dentro do tabuleiro
+      if (y < boardHeight*direction) {
+          y = y + velocity*direction;
+      }
+      // else, mudar o state
+      else {
+          //por no limbo, para no outro lado ser posta no seu sitio
+          state = 4;
+      }
+  }
 
 }

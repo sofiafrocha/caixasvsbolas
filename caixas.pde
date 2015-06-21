@@ -1,4 +1,7 @@
 class Caixa extends baseClass {
+    
+    PImage cubo;
+    
   
   Caixa(int x_temp, int y_temp, int z_temp, int w_temp, int h_temp, int d_temp, int state_temp, int velocity_temp, String team_temp) {
     x = x_temp;
@@ -11,6 +14,14 @@ class Caixa extends baseClass {
     velocity = velocity_temp;
     team = team_temp;
     
+    cubo = loadImage("neve.jpg");
+    
+    if (team_temp == "caixas") {
+        direction = 1;
+    } else {
+        direction = -1;
+    }
+    
   }
   
     void draw() {
@@ -21,8 +32,7 @@ class Caixa extends baseClass {
     } 
 
   void desenhaCaixa(){
-    PImage cubo;
-    cubo = loadImage("data/neve.jpg");
+    
     textureMode(IMAGE);
     
     int Cx = 0;
