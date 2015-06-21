@@ -17,18 +17,20 @@ class Caixa extends baseClass {
     cubo = loadImage("neve.jpg");
     
     if (team_temp == "caixas") {
-        direction = 1;
-    } else {
         direction = -1;
+    } else {
+        direction = 1;
     }
     
   }
   
     void draw() {
-      pushMatrix();
-        translate(x, y, z);
-        desenhaCaixa();
-      popMatrix();
+        pushMatrix();
+            translate(x, y, z);
+            tint(255,255,255,alpha);
+            fill(c);
+            desenhaCaixa();
+        popMatrix();
     } 
 
   void desenhaCaixa(){
@@ -37,6 +39,7 @@ class Caixa extends baseClass {
     
     int Cx = 0;
     int Cy = 0;
+    
     
     //Face 1 lado cima
     beginShape(QUADS);

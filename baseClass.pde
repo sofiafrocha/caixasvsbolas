@@ -8,7 +8,9 @@ class baseClass {
   int depth;
 
   // Colour
-  color c = color(255, 0, 0);
+  int alpha = 155;
+  color c = color(0, 0, 0, alpha);
+  
 
   // Textura
   // to-do
@@ -48,6 +50,11 @@ class baseClass {
   void setState(int s) {
     state = s;
   }
+  
+  void setAlpha(int a) {
+      alpha = a;
+      c = color(255, 0, 0, a);
+  }
 
   // // Moving
   void moveRight() {
@@ -69,7 +76,18 @@ class baseClass {
   // // Fire
   void fire(int boardWidth, int boardHeight) {
       // se estiver ainda dentro do tabuleiro
-      if (y < boardHeight*direction) {
+      //println("inside the fire() function");
+      
+      if (y < boardHeight*direction/2 && direction == 1) {
+            //println("y: " + y);
+            //println("velocity: " + velocity);
+            //println("direction: " + direction);
+          y = y + velocity*direction;
+      }
+      else if (y > boardHeight*direction/2 && direction == -1) {
+            //println("y: " + y);
+            //println("velocity: " + velocity);
+            //println("direction: " + direction);
           y = y + velocity*direction;
       }
       // else, mudar o state
